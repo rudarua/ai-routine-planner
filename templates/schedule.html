@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Scheduled Tasks</title>
+</head>
+<body>
+    <h1>Scheduled Tasks</h1>
+    <ul>
+        {% for task in scheduled_tasks %}
+            <li>{{ task.task }}: {{ task.start }} - {{ task.end }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back</a>
+</body>
+</html>
