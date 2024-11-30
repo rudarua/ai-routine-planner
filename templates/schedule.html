@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>Scheduled Tasks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #f9f9f9;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <h1>Scheduled Tasks</h1>
     <ul>
         {% for task in scheduled_tasks %}
-            <li>{{ task.task }}: {{ task.start }} - {{ task.end }}</li>
+            <li>
+                <strong>{{ task.task }}</strong><br>
+                Start: {{ task.start }}<br>
+                End: {{ task.end }}
+            </li>
         {% endfor %}
     </ul>
     <a href="/">Back</a>
